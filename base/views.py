@@ -2,7 +2,7 @@ from django.shortcuts import render
 from .models import Character
 from .models import Place
 from .models import Organization
-from .models import Membership
+
 
 def htmdata(request):
     characters = Character.objects.order_by('name')

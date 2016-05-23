@@ -17,6 +17,7 @@
                 <tr>
                   <th>Имя</th>
                   <th>Имя (яп.)</th>
+                  <th>Пол</th>
                   <th>Возраст</th>
                   <th>Статус</th>
                   <th>Первое появление</th>
@@ -28,6 +29,7 @@
                         <tr>
                             <td scope="row">{{character.name}}</td>
                             <td>{{character.name_jp}}</td>
+                            <td>{{character.gender}}</td>
                             <td>{{character.age}}</td>
                             <td>{{character.status}}</td>
                             <td>{{character.first_appearance}}</td>
@@ -65,8 +67,8 @@
                   <th>Название (яп.)</th>
                   <th>Тип</th>
                   <th>Активность</th>
-                  <th>Лидер</th>
                   <th>База</th>
+                  <th>Лидер</th>
                   <th>Первое появление</th>
                   <th>Описание</th>
                 </tr>
@@ -77,9 +79,9 @@
                             <td scope="row">{{organization.name}}</td>
                             <td>{{organization.name_jp}}</td>
                             <td>{{organization.org_type}}</td>
-                            <td>{{organization_active}}</td>
-                            <td>{{organization_leader.name}}</td>
-                            <td>{{organization_base.name}}</td>
+                            <td>{{organization.active}}</td>
+                            <td>{{organization.base.name}}</td>
+                            <td>{{organization.leader.name}}</td>
                             <td>{{organization.first_appearance}}</td>
                             <td>{{organization.desc|linebreaks}}</td>
                         </tr>
