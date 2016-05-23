@@ -28,9 +28,6 @@ class Character(models.Model):
     status = models.CharField(max_length=9, choices=STATUS_CHOICES, default=ALIVE)
     first_appearance = models.IntegerField()
     desc = models.TextField(blank=True)
-    
-    def publish(self):
-        self.save()
 
     def __str__(self):
         return self.name
@@ -41,9 +38,6 @@ class Place(models.Model):
     location = models.CharField(max_length=200, blank=True)
     first_appearance = models.IntegerField()
     desc = models.TextField(blank=True)
-    
-    def publish(self):
-        self.save()
 
     def __str__(self):
         return self.name
@@ -66,9 +60,6 @@ class Organization(models.Model):
     leader = models.ForeignKey('Character', blank=True, null=True)
     first_appearance = models.IntegerField()
     desc = models.TextField(blank=True)
-    
-    def publish(self):
-        self.save()
 
     def __str__(self):
         return self.name
