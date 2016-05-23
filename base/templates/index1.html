@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	</head>
+	<body>
+        <div class="container">
+            <h1 style="text-align:center;">Лабораторная работа №2</h1>
+
+            <h2>Персонажи</h2>
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Имя</th>
+                  <th>Имя (яп.)</th>
+                  <th>Возраст</th>
+                  <th>Статус</th>
+                  <th>Первое появление</th>
+                  <th>Описание</th>
+                </tr>
+                </thead>
+                <tbody>
+                    {% for character in characters %}
+                        <tr>
+                            <th scope="row">{{character.id}}</th>
+                            <td>{{character.name}}</td>
+                            <td>{{character.name_jp}}</td>
+                            <td>{{character.age}}</td>
+                            <td>{{character.status}}</td>
+                            <td>{{character.first_appearance}}</td>
+                            <td>{{character.desc|linebreaks}}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <h2>Места</h2>
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Название</th>
+                  <th>Расположение</th>
+                  <th>Первое появление</th>
+                  <th>Описание</th>
+                </tr>
+                </thead>
+                <tbody>
+                    {% for place in places %}
+                        <tr>
+                            <th scope="row">{{place.id}}</th>
+                            <td>{{place.name}}</td>
+                            <td>{{place.location}}</td>
+                            <td>{{place.first_appearance}}</td>
+                            <td>{{place.desc|linebreaks}}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <h2>Организации</h2>
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Название</th>
+                  <th>Название (яп.)</th>
+                  <th>Тип</th>
+                  <th>Активность</th>
+                  <th>Лидер</th>
+                  <th>База</th>
+                  <th>Первое появление</th>
+                  <th>Описание</th>
+                </tr>
+                </thead>
+                <tbody>
+                    {% for organization in organizations %}
+                        <tr>
+                            <th scope="row">{{organization.id}}</th>
+                            <td>{{organization.name}}</td>
+                            <td>{{organization.name_jp}}</td>
+                            <td>{{organization.org_type}}</td>
+                            <td>{{organization_active}}</td>
+                            <td>{{organization_leader.name}}</td>
+                            <td>{{organization_base.name}}</td>
+                            <td>{{organization.first_appearance}}</td>
+                            <td>{{organization.desc|linebreaks}}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+	</body>
+</html>
